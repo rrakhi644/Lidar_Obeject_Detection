@@ -1,10 +1,9 @@
 services:
   - type: web
-    name: lidar-detection-app
-    runtime: python
+    name: lidar-detection
+    env: python
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run app.py --server.port=10000 --server.address=0.0.0.0
     envVars:
       - key: PYTHON_VERSION
         value: 3.9
-    plan: free
