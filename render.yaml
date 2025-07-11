@@ -1,9 +1,7 @@
 services:
   - type: web
-    name: lidar-detection
+    name: lidar-yolo-app
     env: python
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port=10000 --server.address=0.0.0.0
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10
+    startCommand: streamlit run app.py --server.port 10000 --server.enableCORS false
